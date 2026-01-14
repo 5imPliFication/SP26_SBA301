@@ -36,7 +36,7 @@ const PopularCategory = () => {
       numberInterested: 69,
     },
     {
-      id: 5,
+      id: 6,
       categoryName: "Data Science",
       availablePosition: 30,
       numberInterested: 108,
@@ -48,8 +48,9 @@ const PopularCategory = () => {
   const search = (inputCategory) => {
     console.log("Searching for:", inputCategory);
     // Implement search logic here
-    if (!inputCategory?.trim()) {
+    if (!inputCategory.trim()) {
       setSearchCategories(categories);
+      return;
     }
     const searchResult = categories.filter((category) =>
       category.categoryName.toLowerCase().includes(inputCategory.toLowerCase())
@@ -59,18 +60,17 @@ const PopularCategory = () => {
 
   const handleInterest = (categoryId) => {
     const newCategories = categories.map((category) => {
-        if(category.id === categoryId) {
-            return {
-                ...category,
-                numberInterested: category.numberInterested + 1
-            }
-        }
-        return category;
+      if (category.id === categoryId) {
+        return {
+          ...category,
+          numberInterested: category.numberInterested + 1,
+        };
+      }
+      return category;
     });
     setSearchCategories(newCategories);
     setCategories(newCategories);
-    };
-
+  };
 
   return (
     <Container fluid className="mt-5">
@@ -85,10 +85,13 @@ const PopularCategory = () => {
             aria-describedby="search-category"
             onChange={(e) => search(e.target.value)}
           />
-          <Row className="">
+          <Row className="g-3">
             {searchCategories.map((category) => (
-              <Col md={3} className="mb-3 mt-3">
-                <CategoryCard key={category.id} category={category} handleInterest={handleInterest} />
+              <Col md={3} className="mb-3 mt-3" key={category.id}>
+                <CategoryCard
+                  category={category}
+                  handleInterest={handleInterest}
+                />
               </Col>
             ))}
           </Row>

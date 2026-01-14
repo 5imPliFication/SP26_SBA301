@@ -28,9 +28,9 @@ const HeroSection = () => {
                 className="form-control rounded-pill px-4"
                 placeholder="search courses..."
               />
-              <button className="btn btn-primary rounded-pill ms-2 px-4">
+              <a href="/courses" className="btn btn-primary rounded-pill ms-2 px-4">
                 🔍
-              </button>
+              </a>
             </div>
 
             {/* FEATURES */}

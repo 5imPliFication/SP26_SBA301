@@ -5,8 +5,8 @@ import PopularCategory from "@/features/public-site/components/PopularCategory";
 
 const CategoryCard = ({ category, handleInterest }) => {
   return (
-    <Card style={{ width: "18rem" }} className="p-2">
-      <Card.Body>
+    <Card style={{ width: "18rem" }} className="p-2 h-100 d-flex flex-column">
+      <Card.Body className="d-flex flex-column">
         <Card.Title>{category.categoryName}</Card.Title>
 
         <div className="d-flex align-items-center mb-2">
@@ -23,7 +23,7 @@ const CategoryCard = ({ category, handleInterest }) => {
           </span>
         </div>
 
-        <Button variant="primary" className="w-100" onClick={()=>{handleInterest(category.id)}}>
+        <Button variant="primary" className="w-100 mt-auto" onClick={()=>{handleInterest(category.id)}} >
           Interested
         </Button>
       </Card.Body>

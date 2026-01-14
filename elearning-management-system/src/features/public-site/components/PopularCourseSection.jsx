@@ -15,6 +15,7 @@ const PopularCourseSection = () => {
             controls
             interval={null}
             className="py-4"
+            style={{color:"black"}}
           >
             <Carousel.Item>
               <Row>

@@ -1,11 +1,25 @@
 import React from "react";
+import { useLocation, Link } from "react-router-dom";
 
 const PublicHeader = () => {
+  const location = useLocation();
+
+  const isActive = (path) => {
+    return location.pathname === path || location.pathname.startsWith(path + "/");
+  };
+
+  const getLinkClass = (path) => {
+    const baseClass = "nav-link fw-semibold";
+    return isActive(path)
+      ? `${baseClass} text-primary border-bottom border-3 border-primary pb-1`
+      : `${baseClass} text-dark`;
+  };
+
   return (
     <div className="container py-2">
       <nav className="navbar navbar-expand-lg bg-white">
         {/* Logo */}
-        <a className="navbar-brand fw-bold d-flex align-items-center" href="#">
+        <Link className="navbar-brand fw-bold d-flex align-items-center" to="/">
           E-learning
           <span
             className="ms-1 rounded-circle"
@@ -16,7 +30,7 @@ const PublicHeader = () => {
               display: "inline-block",
             }}
           ></span>
-        </a>
+        </Link>
 
         {/* Button toggle mobile */}
         <button
@@ -32,32 +46,32 @@ const PublicHeader = () => {
         <div className="collapse navbar-collapse" id="mainNavbar">
           <ul className="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-3">
             <li className="nav-item">
-              <a className="nav-link fw-semibold text-primary" href="#">
+              <Link className={getLinkClass("/")} to="/">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className={getLinkClass("/courses")} to="/courses">
                 Courses
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link text-dark fw-semibold" href="#">
                 Mentor
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link text-dark fw-semibold" href="#">
                 Group
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link text-dark fw-semibold" href="#">
                 Testimonial
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link text-dark fw-semibold" href="#">
                 Docs
               </a>
             </li>
