@@ -1,13 +1,12 @@
 import React from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link, NavLink } from "react-router-dom";
 
 const PublicHeader = () => {
   const location = useLocation();
 
   const isActive = (path) => {
-    return location.pathname === path || location.pathname.startsWith(path + "/");
+    return location.pathname === path || location.pathname.startsWith(path+"/");
   };
-
   const getLinkClass = (path) => {
     const baseClass = "nav-link fw-semibold";
     return isActive(path)
@@ -19,7 +18,7 @@ const PublicHeader = () => {
     <div className="container py-2">
       <nav className="navbar navbar-expand-lg bg-white">
         {/* Logo */}
-        <Link className="navbar-brand fw-bold d-flex align-items-center" to="/">
+        <NavLink className="navbar-brand fw-bold d-flex align-items-center" to="/">
           E-learning
           <span
             className="ms-1 rounded-circle"
@@ -30,7 +29,7 @@ const PublicHeader = () => {
               display: "inline-block",
             }}
           ></span>
-        </Link>
+        </NavLink>
 
         {/* Button toggle mobile */}
         <button
@@ -46,34 +45,34 @@ const PublicHeader = () => {
         <div className="collapse navbar-collapse" id="mainNavbar">
           <ul className="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-3">
             <li className="nav-item">
-              <Link className={getLinkClass("/")} to="/">
+              <NavLink className={getLinkClass("/")} to="/">
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className={getLinkClass("/courses")} to="/courses">
+              <NavLink className={getLinkClass("/courses")} to="/courses">
                 Courses
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-dark fw-semibold" href="#">
+              <NavLink className={getLinkClass("/mentor")} to="/mentor">
                 Mentor
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-dark fw-semibold" href="#">
+              <NavLink className={getLinkClass("/group")} to="/group">
                 Group
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-dark fw-semibold" href="#">
+              <NavLink className={getLinkClass("/testimonial")} to="/testimonial">
                 Testimonial
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-dark fw-semibold" href="#">
+              <NavLink className={getLinkClass("/docs")} to="/docs">
                 Docs
-              </a>
+              </NavLink>
             </li>
           </ul>
 

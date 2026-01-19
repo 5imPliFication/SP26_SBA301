@@ -1,8 +1,9 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PublicHomePage from "@/features/public-site/pages/PublicHomePage";
-import CourseListWithLoading from "@/features/courses/CourseList";
+import courseService from "@/features/courses/service/course.service";
 import CourseDetailWithLoading from "@/features/courses/CourseDetail";
 import PublicLayout from "@/app/layouts/PublicLayout";
+import PublicCoursePage from "@/features/courses/pages/PublicCoursePage";
 
 const router = createBrowserRouter([
   {
@@ -15,14 +16,17 @@ const router = createBrowserRouter([
       },
       {
         path: "courses",
-        element: <CourseListWithLoading isLoading={false} />,
+        element: <PublicCoursePage/>,
+        loader: courseService.findAll,
       },
       {
-        path: "course/:id",
-        element: <CourseDetailWithLoading isLoading={false} />,
+        path: "courses/:id",
+        element: <CourseDetailWithLoading/>,
       },
     ],
   },
+  // { path: "/login", element: <LoginPage /> },
+  // { path: "/register", element: <RegisterPage /> },
 ]);
 
 export default router;

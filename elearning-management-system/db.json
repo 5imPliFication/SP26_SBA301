@@ -1,0 +1,70 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "Design system with React programme",
+      "instructor": "Colt Stelle",
+      "price": 20,
+      "rating": 5.0,
+      "classes": 12,
+      "students": 130,
+      "image": "https://images.unsplash.com/photo-1487014679447-9f8336841d58?q=80&w=1200&auto=format&fit=crop"
+    },
+    {
+      "id": 2,
+      "title": "Advanced JavaScript Concepts",
+      "instructor": "Sarah Johnson",
+      "price": 25,
+      "rating": 4.8,
+      "classes": 18,
+      "students": 245,
+      "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1200&auto=format&fit=crop"
+    },
+    {
+      "id": 3,
+      "title": "Web Development Bootcamp",
+      "instructor": "Mike Chen",
+      "price": 35,
+      "rating": 4.9,
+      "classes": 24,
+      "students": 512,
+      "image": "https://images.unsplash.com/photo-1487014679447-9f8336841d58?q=80&w=1200&auto=format&fit=crop"
+    },
+    {
+      "id": 4,
+      "title": "CSS Mastery and Animations",
+      "instructor": "Emma Wilson",
+      "price": 18,
+      "rating": 4.7,
+      "classes": 15,
+      "students": 189,
+      "image": "https://images.unsplash.com/photo-1487014679447-9f8336841d58?q=80&w=1200&auto=format&fit=crop"
+    },
+    {
+      "id": 5,
+      "title": "React Hooks Deep Dive",
+      "instructor": "David Kumar",
+      "price": 22,
+      "rating": 4.9,
+      "classes": 14,
+      "students": 320,
+      "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1200&auto=format&fit=crop"
+    },
+    {
+      "id": 6,
+      "title": "Node.js and Express.js",
+      "instructor": "Lisa Anderson",
+      "price": 28,
+      "rating": 4.8,
+      "classes": 20,
+      "students": 428,
+      "image": "https://images.unsplash.com/photo-1487014679447-9f8336841d58?q=80&w=1200&auto=format&fit=crop"
+    }
+  ],
+  "account": [
+    { "id": 1, "username": "admin", "password": "admin" },
+    { "id": 2, "username": "user01", "password": "user01" },
+    { "id": 3, "username": "user02", "password": "user02" },
+    { "id": 4, "username": "mentor01", "password": "mentor01" }
+  ]
+}
