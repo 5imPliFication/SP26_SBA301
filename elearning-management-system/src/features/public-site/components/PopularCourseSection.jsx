@@ -15,17 +15,17 @@ const PopularCourseSection = () => {
             controls
             interval={null}
             className="py-4"
-            style={{color:"black"}}
+            style={{ color: "black" }}
           >
             <Carousel.Item>
               <Row>
-                <Col md={4}>
+                <Col md={4} className="d-flex mb-2">
                   <CourseCard />
                 </Col>
-                <Col md={4}>
+                <Col md={4} className="d-flex mb-2">
                   <CourseCard />
                 </Col>
-                <Col md={4}>
+                <Col md={4} className="d-flex mb-2">
                   <CourseCard />
                 </Col>
               </Row>

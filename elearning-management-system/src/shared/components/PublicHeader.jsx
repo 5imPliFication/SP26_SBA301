@@ -76,24 +76,26 @@ const PublicHeader = () => {
             </li>
           </ul>
 
-          {/* Buttons */}
+          {/* Authentication */}
           <div className="d-flex gap-2">
-            <button
+            <NavLink
               className="btn text-white px-4"
               style={{ backgroundColor: "#6f4ef6" }}
+              to="/login"
             >
               Sign In
-            </button>
+            </NavLink>
 
-            <button
+            <NavLink
               className="btn px-4"
               style={{
                 backgroundColor: "#ede9fe",
                 color: "#6f4ef6",
               }}
+              to="/register"
             >
               Sign Up
-            </button>
+            </NavLink>
           </div>
         </div>
       </nav>

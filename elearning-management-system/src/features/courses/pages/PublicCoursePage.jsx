@@ -27,7 +27,6 @@ const PublicCoursePage = () => {
 
   return (
     <section className="bg-light p-3 my-3">
-      <h2 className="mb-4">All Courses</h2>
       <Container>
         <Row className="d-flex">
           <Col md={3} xl={4} className="bg-white p-4 rounded-3">

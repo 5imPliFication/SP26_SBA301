@@ -1,0 +1,32 @@
+.course-card {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+/* Image zoom */
+.course-card .hover-zoom {
+    overflow: hidden;
+}
+
+.course-card .hover-zoom img {
+  transition: transform 0.35s ease;
+}
+
+.course-card:hover .hover-zoom img {
+  transform: scale(1.08);
+}
+
+.course-card:hover .badge {
+  transform: scale(1.05);
+}
+
+.course-card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}

@@ -87,7 +87,7 @@ const PopularCategory = () => {
           />
           <Row className="g-3">
             {searchCategories.map((category) => (
-              <Col md={3} className="mb-3 mt-3" key={category.id}>
+              <Col md={3} className="mb-3 mt-3 d-flex" key={category.id}>
                 <CategoryCard
                   category={category}
                   handleInterest={handleInterest}

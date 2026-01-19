@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, Badge } from "react-bootstrap";
+import '@/styles/course-card.css'
 
 const CourseCardClickable = ({ course }) => {
   const displayCourse = course || {
@@ -15,11 +16,11 @@ const CourseCardClickable = ({ course }) => {
 
   return (
     <Card
-      className="shadow-sm border-1 rounded-4 overflow-hidden h-100 transition"
+      className="course-card shadow-sm border-1 rounded-4 h-100"
       style={{ width: "100%", minHeight: 430, cursor: "pointer" }}
     >
       {/* Image + badge overlay */}
-      <div className="position-relative">
+      <div className="position-relative hover-zoom">
         <Card.Img
           src={displayCourse.image}
           alt="cover"
@@ -28,7 +29,7 @@ const CourseCardClickable = ({ course }) => {
 
         <Badge
           bg="primary"
-          className="position-absolute rounded-circle d-flex flex-column justify-content-center align-items-center text-center fw-bold"
+          className="position-absolute rounded-circle d-flex flex-column justify-content-center align-items-center text-center fw-bold z-index-0"
           style={{
             width: 72,
             height: 72,
@@ -50,10 +51,14 @@ const CourseCardClickable = ({ course }) => {
 
         <div className="d-flex justify-content-between align-items-end mb-3 mt-auto">
           <div>
-            <div className="text-secondary small mb-2">{displayCourse.instructor}</div>
+            <div className="text-secondary small mb-2">
+              {displayCourse.instructor}
+            </div>
 
             <div className="d-flex align-items-center gap-2">
-              <span className="fw-bold text-danger">{displayCourse.rating}</span>
+              <span className="fw-bold text-danger">
+                {displayCourse.rating}
+              </span>
             </div>
           </div>
 
